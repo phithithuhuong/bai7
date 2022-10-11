@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Amount</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td><input type="text" id="dauvao">
+        <td>
+            <select id="number1">
+                      <option value="a">VND</option>
+                      <option value="b">USD</option>
+            </select>
+
+        <td>
+            <select id="number2">
+                  <option value="a">VND</option>
+                  <option value="b">USD</option>
+            </select>
+        </td>
+        <td>
+            <button onclick="abc()">Convert</button>
+        </td>
+    </tr>
+</table>
+<br>
+Result: <p id="result"></p>
+<script>
+    function abc() {
+        //document.getElementById là nhập ID của element
+        // value : giá trị tùy chọn
+        let dauvao = document.getElementById('dauvao').value;
+        let number1 = document.getElementById('number1').value;
+        let number2 = document.getElementById('number2').value;
+        let Result;
+        //nếu number1 bằng VND và number2 bằng USD thì Result bằng giá tr của người nhập chia 23000
+        if (number1 == "a" && number2 == "b") {
+            Result =(dauvao/23000) + "$";
+        } else if (number1 == "a" && number2 == "b") {
+            Result =(dauvao*23000) + "Đ";
+        } else if (number1== "a") {
+            Result =dauvao + "Đ";
+        } else
+        {
+            Result =dauvao + "$";
+        }
+        document.getElementById("result").innerHTML = Result;
+        }
+
+
+</script>
+</body>
+</html>
